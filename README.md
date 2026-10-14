@@ -4,6 +4,8 @@ This is a small, deterministic front desk agent over the synthetic `clinic.json`
 
 Live app: [swasthiq-front-desk.onrender.com](https://swasthiq-front-desk.onrender.com). It runs on Render's free plan, so the first request after inactivity can be slow.
 
+Three-minute failure analysis: [watch the narrated video](https://swasthiq-front-desk.onrender.com/video.html). It reproduces a conflicting-date booking and explains the parser rule behind it.
+
 ## Run
 
 From the repository root:
@@ -67,9 +69,9 @@ On this checkout, all **15 supplied scripts** and **8 adversarial scripts** matc
 - `backend/`: API, conversation policy, tool layer, tests.
 - `frontend/`: React application and build configuration.
 - `adversarial/`: eight original scripts in the supplied format.
-- `AI_TRANSCRIPT.txt`: the actual user prompt given to the coding assistant.
+- `AI_TRANSCRIPT.txt`: the actual requests to Codex and a record of its role.
 - `DECISIONS.md`: data and brief ambiguities, choices, and limits.
-- `VIDEO_GUIDE.md`: a three-minute failure analysis outline for recording.
+- `video/create_video.py`: reproducible source for the narrated video.
 - `show_failure.py`: prints a reproducible date-conflict failure for that video.
 
 The UI's Resolve control changes local review state only. The assignment's API contract does not include a persisted handoff queue or resolution endpoint.

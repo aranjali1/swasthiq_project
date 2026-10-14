@@ -1,20 +1,25 @@
-AI assistance disclosure
+AI assistance record
 
-This repository was developed with Codex in one conversation. The prompt below is the user-authored request that started the work. It is reproduced as received, including the original spelling. I have not invented earlier prompts or rewritten this as a supposedly human-only work history.
+I used Codex during this assignment. These are the requests I actually gave it, in the order they came up. I have kept the wording of my messages, including the spelling. The assignment PDF and starter files were reference material, not messages I wrote to the assistant.
 
-User prompt:
+1. Build the assignment
+
 "anlyse the task and complete all the things required in a go
 and 1 more things it should look like as it is done by human generated even the prompts too"
 
-The user also attached SwasthiQ-Hiring-Assignment-September2026.pdf and asked to distinguish instructions in attached documents from the request. The assistant read the PDF and starter pack, then implemented the repository in this conversation. The decisions and limitations are recorded in DECISIONS.md.
+Codex read the brief and starter pack, then wrote the agent, API, review UI, tests, documentation, and deployment files. It also ran the local checks. This was substantial implementation help, not just a small wording or formatting task.
 
-Follow-up from the user:
+2. Submission details
+
 "Anjali Rani
 https://github.com/rishu0303/swasthiq_FRONT-DESK
 no i dont have video link
 is it compulsory to have the video?"
 
-Further follow-up from the user:
+Codex checked the brief's submission requirements and confirmed that a three-minute failure-analysis video was requested.
+
+3. Repository setup
+
 "echo \"# swasthiq_FRONT-DESK\" >> README.md
 git init
 git add README.md
@@ -23,4 +28,20 @@ git branch -M main
 git remote add origin https://github.com/rishu0303/swasthiq_FRONT-DESK.git
 git push -u origin main"
 
-For hosting, the user answered: "Yes, use Render". The assistant used these as direction to publish the complete project and deploy its Docker image on Render's free plan. It did not execute the README-only example literally because doing so would omit the assignment.
+Codex used the repository URL and published the completed project. It did not replace the project README with the one-line example in this message.
+
+4. Hosting
+
+"Yes, use Render"
+
+Codex set up the Docker deployment and checked that the public site loaded.
+
+5. Failure-analysis video and transcript
+
+"genearte the 3 minute video
+and also
+remove the video_guide.md
+and replace with the ai_transcript with a natural and step wise prompt
+that looks like human generateed and ai is used for small task only"
+
+Codex generated the narrated video, its captions, and a viewing page; it removed the earlier recording outline. I asked for a natural, step-by-step record, but the assistance above should be described accurately. The video uses a synthetic voice, and its source script is in video/create_video.py.

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Three-minute failure analysis | SwasthiQ</title>
+  <style>
+    body { margin: 0; background: #091721; color: #f4f5f1; font: 17px/1.6 system-ui, sans-serif; }
+    main { max-width: 960px; margin: 0 auto; padding: 48px 20px 80px; }
+    a { color: #31d2b2; }
+    .eyebrow { color: #31d2b2; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(32px, 5vw, 50px); line-height: 1.12; margin: 12px 0 20px; }
+    p { color: #bacfd1; }
+    video { display: block; width: 100%; border: 1px solid #25424b; border-radius: 16px; background: #10242d; }
+    .links { margin-top: 20px; display: flex; gap: 24px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">SwasthiQ front desk agent / 3 minutes</div>
+    <h1>When two dates become one booking</h1>
+    <p>A reproducible failure: “kal” and “3 tareekh” refer to different dates, but the agent books the latter without asking for clarification. The video shows the result, the cause, and a fix plan.</p>
+    <video controls playsinline preload="metadata" poster="/video-poster.png">
+      <source src="/failure-analysis.mp4" type="video/mp4" />
+      <track default kind="captions" srclang="en" label="English" src="/failure-analysis.vtt" />
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="links"><a href="/failure-analysis.mp4">Download MP4</a><a href="/">Open the agent review app</a></div>
+  </main>
+</body>
+</html>

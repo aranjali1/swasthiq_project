@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:09.126
+The agent usually handles the supplied scripts, but I wanted to see what happens when a caller gives conflicting dates in one sentence.
+
+00:00:09.126 --> 00:00:16.269
+This video walks through a real local run, what the agent did, and why the result is unsafe.
+
+00:00:16.269 --> 00:00:19.443
+The test date is October first, twenty twenty-six.
+
+00:00:30.000 --> 00:00:31.531
+Here is the input.
+
+00:00:31.531 --> 00:00:37.657
+The caller says kal, meaning tomorrow, and also three tareekh, meaning the third of the month.
+
+00:00:37.657 --> 00:00:40.337
+On October first, tomorrow is October second.
+
+00:00:40.337 --> 00:00:42.252
+The third is October third.
+
+00:00:42.252 --> 00:00:45.315
+Those cannot both describe the same appointment date.
+
+00:00:45.315 --> 00:00:51.058
+At this point the agent should ask a question before it touches a booking tool.
+
+00:01:00.000 --> 00:01:03.346
+I ran show failure dot py against the agent.
+
+00:01:03.346 --> 00:01:05.205
+The terminal state is booked.
+
+00:01:05.205 --> 00:01:11.153
+The reply says the appointment is on October third at nine in the morning with Dr.
+
+00:01:11.153 --> 00:01:11.897
+Anjali Rao.
+
+00:01:11.897 --> 00:01:13.756
+That is a concrete mistake.
+
+00:01:13.756 --> 00:01:16.730
+The caller might have meant tomorrow, October second.
+
+00:01:16.730 --> 00:01:21.192
+A successful tool call does not mean the agent understood the instruction.
+
+00:01:30.000 --> 00:01:32.948
+The cause is in the date extraction rule.
+
+00:01:32.948 --> 00:01:39.215
+It collects date mentions, sorts them by their position in the sentence, and takes the last one.
+
+00:01:39.215 --> 00:01:44.006
+That rule is useful for a clear correction, such as, not Friday, Saturday.
+
+00:01:44.006 --> 00:01:45.849
+Here there is no correction.
+
+00:01:45.849 --> 00:01:51.010
+The two phrases conflict, but the parser treats the later phrase as the winner.
+
+00:02:00.000 --> 00:02:08.355
+The booking tool does recheck whether the selected slot is available, and the shared tool context prevents two simultaneous bookings of that slot.
+
+00:02:08.355 --> 00:02:10.535
+Those checks protect the clinic data.
+
+00:02:10.535 --> 00:02:13.442
+They cannot tell which date the caller intended.
+
+00:02:13.442 --> 00:02:18.164
+The error happens earlier, when the conversation is translated into a single date.
+
+00:02:18.164 --> 00:02:22.524
+This is why a valid booking can still be the wrong outcome.
+
+00:02:30.000 --> 00:02:33.890
+I would keep all distinct dates found in the latest request.
+
+00:02:33.890 --> 00:02:42.732
+If they disagree and there is no explicit correction, the agent should ask which date the caller means, or hand off if clarification is unavailable.
+
+00:02:42.732 --> 00:02:47.684
+Then I would add this exact sentence as a regression test that forbids booking.
+
+00:02:47.684 --> 00:02:54.758
+The supplied fifteen scripts and eight adversarial scripts pass locally across three runs, but they did not cover this conflict.
+
+00:02:54.758 --> 00:02:57.234
+That is the lesson from this failure.

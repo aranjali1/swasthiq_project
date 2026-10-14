@@ -55,7 +55,7 @@ class Handler(BaseHTTPRequestHandler):
             target = FRONTEND / "index.html"
         if not target.is_file(): return self._json(404, {"error": "frontend not built"})
         data = target.read_bytes()
-        content_type = {".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml"}.get(target.suffix, "application/octet-stream")
+        content_type = {".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml", ".mp4": "video/mp4", ".vtt": "text/vtt", ".png": "image/png"}.get(target.suffix, "application/octet-stream")
         self.send_response(200)
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(data)))
