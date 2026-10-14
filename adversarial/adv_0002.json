@@ -1,0 +1,20 @@
+{
+  "id": "adv_0002",
+  "description": "Holiday with a plausible time",
+  "today": "2026-10-01",
+  "turns": [
+    "Kal subah 10 baje Dr. Rao?",
+    "Main Neha Bhatt hoon, 9812200404."
+  ],
+  "expected": {
+    "terminal_state": "abandoned",
+    "escalation_reason": null,
+    "must_call": [
+      "search_slots"
+    ],
+    "must_not_call": [
+      "book_appointment"
+    ],
+    "notes": "Tomorrow is a clinic holiday even though the doctor normally works Fridays."
+  }
+}

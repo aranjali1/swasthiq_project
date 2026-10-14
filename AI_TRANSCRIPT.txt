@@ -1,0 +1,15 @@
+AI assistance disclosure
+
+This repository was developed with Codex in one conversation. The prompt below is the user-authored request that started the work. It is reproduced as received, including the original spelling. I have not invented earlier prompts or rewritten this as a supposedly human-only work history.
+
+User prompt:
+"anlyse the task and complete all the things required in a go
+and 1 more things it should look like as it is done by human generated even the prompts too"
+
+The user also attached SwasthiQ-Hiring-Assignment-September2026.pdf and asked to distinguish instructions in attached documents from the request. The assistant read the PDF and starter pack, then implemented the repository in this conversation. The decisions and limitations are recorded in DECISIONS.md.
+
+Follow-up from the user:
+"Anjali Rani
+https://github.com/rishu0303/swasthiq_FRONT-DESK
+no i dont have video link
+is it compulsory to have the video?"

@@ -1,0 +1,7 @@
+.git
+frontend/node_modules
+frontend/dist
+results
+__pycache__
+*.pyc
+SwasthiQ-Hiring-Assignment-September2026.pdf

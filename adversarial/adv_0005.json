@@ -1,0 +1,21 @@
+{
+  "id": "adv_0005",
+  "description": "Name collision without phone",
+  "today": "2026-10-01",
+  "turns": [
+    "Sharma ji ke liye Dr. Rao chahiye.",
+    "Phone number yaad nahi. 3 tareekh subah."
+  ],
+  "expected": {
+    "terminal_state": "escalated",
+    "escalation_reason": "ambiguous_patient",
+    "must_call": [
+      "lookup_patient",
+      "escalate_to_human"
+    ],
+    "must_not_call": [
+      "book_appointment"
+    ],
+    "notes": "Three Sharma records make a surname or near-name unsafe."
+  }
+}

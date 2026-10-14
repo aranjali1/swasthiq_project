@@ -1,0 +1,22 @@
+{
+  "id": "adv_0007",
+  "description": "Time correction in later turn",
+  "today": "2026-10-01",
+  "turns": [
+    "Shalini Uniyal, 9812200694. Dr. Rao ke saath 8 tareekh 9 baje.",
+    "9 nahi, 9:30 kar dijiye."
+  ],
+  "expected": {
+    "terminal_state": "booked",
+    "escalation_reason": null,
+    "must_call": [
+      "lookup_patient",
+      "search_slots",
+      "book_appointment"
+    ],
+    "must_not_call": [
+      "escalate_to_human"
+    ],
+    "notes": "The first time is occupied; the later correction should win."
+  }
+}
