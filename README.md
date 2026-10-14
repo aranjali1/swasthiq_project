@@ -2,6 +2,8 @@
 
 This is a small, deterministic front desk agent over the synthetic `clinic.json` data. It has a Python REST API, six clinic tools, and a React review UI with a handoff queue and conversation detail. The UI follows the two layouts in the brief; the data shown is from the supplied example conversations.
 
+Live app: [swasthiq-front-desk.onrender.com](https://swasthiq-front-desk.onrender.com). It runs on Render's free plan, so the first request after inactivity can be slow.
+
 ## Run
 
 From the repository root:
@@ -68,5 +70,6 @@ On this checkout, all **15 supplied scripts** and **8 adversarial scripts** matc
 - `AI_TRANSCRIPT.txt`: the actual user prompt given to the coding assistant.
 - `DECISIONS.md`: data and brief ambiguities, choices, and limits.
 - `VIDEO_GUIDE.md`: a three-minute failure analysis outline for recording.
+- `show_failure.py`: prints a reproducible date-conflict failure for that video.
 
 The UI's Resolve control changes local review state only. The assignment's API contract does not include a persisted handoff queue or resolution endpoint.

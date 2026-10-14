@@ -13,3 +13,14 @@ Follow-up from the user:
 https://github.com/rishu0303/swasthiq_FRONT-DESK
 no i dont have video link
 is it compulsory to have the video?"
+
+Further follow-up from the user:
+"echo \"# swasthiq_FRONT-DESK\" >> README.md
+git init
+git add README.md
+git commit -m \"first commit\"
+git branch -M main
+git remote add origin https://github.com/rishu0303/swasthiq_FRONT-DESK.git
+git push -u origin main"
+
+For hosting, the user answered: "Yes, use Render". The assistant used these as direction to publish the complete project and deploy its Docker image on Render's free plan. It did not execute the README-only example literally because doing so would omit the assignment.
